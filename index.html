@@ -3,7 +3,7 @@
   	<head>
 	    <style>
 	     	#compass{
-	        	width:50%;
+	        	width:100%;
 	        	transform-origin: 50% 50%;
 	        	-webkit-transform-origin: 50% 50%;
 	        	-moz-transform-origin: 50% 50%;
@@ -11,7 +11,7 @@
 	    </style>
 	    <script>
 	      	function init() {
-	        	var compass = document.getElementById('compass');
+	        	var compass = document.getElementById('compassContainer');
 	        	if(window.DeviceOrientationEvent) {
 	  
 	          	window.addEventListener('deviceorientation', function(event) {
