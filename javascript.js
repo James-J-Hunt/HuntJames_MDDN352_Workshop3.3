@@ -1,5 +1,8 @@
 function init() {
     var compass = document.getElementById('compass');
+
+    var dataContainerOrientation = document.getElementById('dataContainerOrientation');
+    
         if(window.DeviceOrientationEvent) {
 
         window.addEventListener('deviceorientation', function(event) {
@@ -23,13 +26,13 @@ function init() {
                 }
             }
 
-            if(alpha!=null || beta!=null || gamma!=null) 
-                dataContainerOrientation.innerHTML = 'alpha: ' + alpha + '<br/>beta: ' + beta + '<br />gamma: ' + gamma;
-
             compass.style.Transform = 'rotate(' + alpha + 'deg)';
             compass.style.WebkitTransform = 'rotate('+ webkitAlpha + 'deg)';
             //Rotation is reversed for FF
             compass.style.MozTransform = 'rotate(-' + alpha + 'deg)'; 
+
+            if(alpha!=null || beta!=null || gamma!=null) 
+                dataContainerOrientation.innerHTML = 'alpha: ' + alpha + '<br/>beta: ' + beta + '<br />gamma: ' + gamma;
         }, false);
     }
 } 
