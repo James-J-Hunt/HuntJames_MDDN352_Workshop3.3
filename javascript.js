@@ -20,8 +20,8 @@ function init() {
                 }
             }
 
-            compass.style.Transform = 'rotate(' + alpha-180 +'deg)';
-            compass.style.WebkitTransform = 'rotate('+ webkitAlpha + 'deg)';
+            compass.style.Transform = 'rotate(' + alpha +'deg)';
+            compass.style.WebkitTransform = 'rotate('+ webkitAlpha-180 + 'deg)';
             //Rotation is reversed for FF
             compass.style.MozTransform = 'rotate(-' + alpha + 'deg)'; 
         }, false);
