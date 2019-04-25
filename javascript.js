@@ -4,6 +4,9 @@ function init() {
 
         window.addEventListener('deviceorientation', function(event) {
             var alpha;
+            var beta = event.beta;
+            var gamma = event.gamma;
+
             //Check for iOS property
             if(event.webkitCompassHeading) {
                 alpha = event.webkitCompassHeading;
@@ -19,6 +22,9 @@ function init() {
                     webkitAlpha = alpha-270;
                 }
             }
+
+            if(alpha!=null || beta!=null || gamma!=null) 
+                dataContainerOrientation.innerHTML = 'alpha: ' + alpha + '<br/>beta: ' + beta + '<br />gamma: ' + gamma;
 
             compass.style.Transform = 'rotate(' + alpha + 'deg)';
             compass.style.WebkitTransform = 'rotate('+ webkitAlpha + 'deg)';
