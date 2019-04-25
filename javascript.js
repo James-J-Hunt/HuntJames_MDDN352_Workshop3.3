@@ -8,7 +8,7 @@ function init() {
             if(event.webkitCompassHeading) {
                 alpha = event.webkitCompassHeading;
                 //Rotation is reversed for iOS
-                compass.style.WebkitTransform = 'rotate(-' + alpha + 40 + 'deg)';
+                compass.style.WebkitTransform = 'rotate(-' + alpha + 'deg)';
             }
             //non iOS
             else {
@@ -20,7 +20,7 @@ function init() {
                 }
             }
 
-            compass.style.Transform = 'rotate(' + alpha + 'deg)';
+            compass.style.Transform = 'rotate(' + alpha-180 +'deg)';
             compass.style.WebkitTransform = 'rotate('+ webkitAlpha + 'deg)';
             //Rotation is reversed for FF
             compass.style.MozTransform = 'rotate(-' + alpha + 'deg)'; 
